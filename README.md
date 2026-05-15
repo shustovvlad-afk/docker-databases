@@ -19,6 +19,14 @@ Connection settings:
 - User: `sa`
 - Password: `123456Qaz`
 
+In SQL Server Management Studio, use SQL Server Authentication. If connection fails during the pre-login handshake, open **Options > Connection Properties** and enable **Trust server certificate**. Newer SSMS versions may also require setting **Encrypt** to **Optional** for a local Docker server.
+
+On the first run, wait until the logs show `Recovery is complete` before connecting:
+
+```sh
+docker logs -f local-mssql
+```
+
 To use a custom password:
 
 ```sh
