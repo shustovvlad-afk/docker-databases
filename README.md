@@ -6,6 +6,12 @@ Run SQL Server locally with Docker Compose.
 docker compose up -d
 ```
 
+On Windows, the same command works because the default password is already set in `docker-compose.yml`:
+
+```cmd
+docker compose up -d
+```
+
 Connection settings:
 
 - Host: `localhost`
@@ -17,6 +23,18 @@ To use a custom password:
 
 ```sh
 MSSQL_SA_PASSWORD='AnotherStrong!Passw0rd' docker compose up -d
+```
+
+Windows PowerShell:
+
+```powershell
+$env:MSSQL_SA_PASSWORD="AnotherStrong!Passw0rd"; docker compose up -d
+```
+
+Windows CMD:
+
+```cmd
+set MSSQL_SA_PASSWORD=AnotherStrong!Passw0rd && docker compose up -d
 ```
 
 Check logs:
